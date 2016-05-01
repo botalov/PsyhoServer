@@ -5,9 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * Created by botal on 01.05.2016.
- */
+
 @Entity
 @Table(name = "question")
 public class Question {
@@ -16,11 +14,11 @@ public class Question {
     @GenericGenerator(name = "increment", strategy = "increment")
     private long id;
 
-    @Column(name = "textQuestion", nullable = false)
-    private String textQuestion;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "textAnswer", nullable = false)
-    private String textAnswer;
+    @Column(name = "typeId", nullable = false)
+    private long typeId;
 
 
 
@@ -35,19 +33,19 @@ public class Question {
         this.id = id;
     }
 
-    public String getTextQuestion() {
-        return textQuestion;
+    public String getName() {
+        return name;
     }
 
-    public void setTextQuestion(String textQuestion) {
-        this.textQuestion = textQuestion;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTextAnswer() {
-        return textAnswer;
+    public long getType() {
+        return typeId;
     }
 
-    public void setTextAnswer(String textAnswer) {
-        this.textAnswer = textAnswer;
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
     }
 }
